@@ -1,0 +1,692 @@
+<!-- Rewritten Code with Debug Fix -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meghnath Regmi - Chartered Accountant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Global Styles */
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #2e2e2e;
+    }
+    nav {
+      background: #ffffff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    nav a {
+      color: #0d47a1;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 0 15px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: 0.3s ease;
+    }
+    nav a:hover,
+    nav .nav-link.active {
+      background: #0d47a1;
+      color: #fff;
+    }
+
+    /* Header Styles */
+    header {
+      background: #ffffff;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    header img {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border: 3px solid #0d47a1;
+    }
+    .intro h1 {
+      margin: 0;
+      font-size: 36px;
+      color: #0d47a1;
+    }
+    .subheading {
+      font-size: 18px;
+      color: #555;
+    }
+
+    /* Layout Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 30px;
+    }
+    .section {
+      margin-top: 60px;
+    }
+    .section h2 {
+      font-size: 28px;
+      color: #0d47a1;
+      margin-bottom: 20px;
+      border-left: 5px solid #0d47a1;
+      padding-left: 15px;
+    }
+    .section img.banner {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    /* Blog Redesign */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.blog-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.blog-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blog-meta {
+  font-size: 14px;
+  color: #777;
+  margin: 10px 20px 0 20px;
+}
+
+.blog-date {
+  font-size: 12px;
+  color: #888;
+}
+
+.blog-title {
+  margin: 10px 20px 5px;
+  font-size: 18px;
+  color: #0d47a1;
+}
+
+.blog-excerpt {
+  margin: 0 20px 20px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #444;
+}
+
+.blog-read {
+  margin: 0 20px;
+  align-self: flex-start;
+  text-decoration: none;
+  font-weight: bold;
+  color: #0d47a1;
+  font-size: 14px;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.blog-read:hover {
+  text-decoration: underline;
+}
+
+    .blog-post {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .blog-post:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .blog-post h3 {
+      margin-top: 0;
+      color: #0d47a1;
+    }
+    .blog-post p {
+      color: #444;
+    }
+
+    /* Form */
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    form input, form textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    form button {
+      background: #0d47a1;
+      color: #fff;
+      font-weight: bold;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    /* Skills Popup Styles */
+    .dim-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.1);
+      z-index: 5;
+      display: none;
+    }
+    .skill-box {
+      position: relative;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      background: #ffffff;
+      padding: 14px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      max-width: 100%;
+    }
+    .skill-box:hover {
+      background: #e3f2fd !important;
+    }
+    .skill-popup {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffffff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      z-index: 10;
+      width: 250px;
+      font-size: 14px;
+      color: #333;
+    }
+    .skill-box.active .skill-popup {
+      display: block;
+    }
+    .skill-box.active {
+      z-index: 20;
+      position: relative;
+    }
+
+    .skills-wrapper {
+      /* Force exactly 4 columns on wider screens */
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      justify-content: center;
+    }
+
+    /* Experience Interactive Section */
+    .company-link {
+      display: block;
+      padding: 12px 15px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #0d47a1;
+      background: #ffffff;
+      transition: background 0.3s;
+    }
+    .company-link:hover {
+      background: #e3f2fd;
+    }
+    .company-link.active {
+      background: #0d47a1;
+      color: #fff;
+    }
+
+    /* Responsibilities styling (final desired style) */
+    #responsibility-content {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #444;
+      display: grid;
+      gap: 10px;
+    }
+    #responsibility-content h4 {
+      color: #0d47a1;
+      margin: 4px 0 4px 0;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    #responsibility-content ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      counter-reset: item;
+    }
+    #responsibility-content ul li {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      background: linear-gradient(to right, #ffffff, #e3f2fd);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      border-left: 8px solid #0d47a1;
+      font-size: 15.5px;
+      font-weight: 500;
+      line-height: 1.6;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    #responsibility-content ul li::before {
+      counter-increment: item;
+      content: counter(item);
+      background: #0d47a1;
+      color: #fff;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: bold;
+      margin-right: 16px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="overlay" class="dim-overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div>
+      <a href="#home" class="nav-link" id="nav-home">Home</a>
+      <a href="#blogs" class="nav-link" id="nav-blogs">Blogs</a>
+      <a href="#contact" class="nav-link" id="nav-contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <div class="intro" style="text-align: center; max-width: 900px;">
+      <h1 style="font-size: 48px; color: #0d47a1; margin-bottom: 10px;">Meghnath Regmi</h1>
+      <p class="subheading" style="font-size: 22px; color: #555;">Senior Accountant | IFRS Specialist | Analyst</p>
+      <p style="margin-top: 20px; font-size: 18px; color: #666;">A passionate finance professional with expertise in reporting, compliance, and automation, based in Riyadh, KSA.</p>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <div class="container">
+
+    <!-- HOME SECTION -->
+    <div class="section" id="home">
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between;">
+        <div style="flex: 1; min-width: 280px;">
+          <h1 style="font-size: 36px; color: #0d47a1; margin-bottom: 10px;">Meet Meghnath Regmi</h1>
+          <p style="font-size: 14px; color: #777; margin-bottom: 20px;">Journey of a Finance Professional</p>
+          <p style="font-size: 18px; line-height: 1.6; color: #333;">With a passion for financial systems, compliance, and analytics, I’ve spent the past 4+ years transforming numbers into insight across the GCC. I specialize in IFRS implementation, Power BI automation, and audit-readiness — helping organizations improve accuracy and performance.</p>
+        </div>
+        <div style="flex: 1; min-width: 280px; text-align: center;">
+          <img src="https://images.unsplash.com/photo-1591696331111-4c72c92c5b01?crop=entropy&cs=tinysrgb&fit=crop&h=280&w=280" alt="Meghnath Regmi" style="border-radius: 12px; width: 100%; max-width: 300px; object-fit: cover;">
+        </div>
+      </div>
+
+      <h2 style="margin-top: 60px; font-size: 26px; color: #0d47a1;">My Skills to Support You</h2>
+      <div class="skills-wrapper">
+        <!-- 1. Financial Planning & Analysis -->
+        <div class="skill-box" onclick="togglePopup(this)">
+          <div style="font-size: 30px; color: #0d47a1;">💰</div>
+          <p style="margin-top: 10px; font-size: 14px;">Financial Planning & Analysis</p>
+          <div class="skill-popup">Expert in budgeting, forecasting, and analyzing financial statements to guide strategic decisions.</div>
+        </div>
+
+        <!-- 2. Month & Year-End Closings -->
+        <div class="skill-box" onclick="togglePopup(this)">
+          <div style="font-size: 30px; color: #0d47a1;">📆</div>
+          <p style="margin-top: 10px; font-size: 14px;">Month & Year-End Closings</p>
+          <div class="skill-popup">Proficient in ensuring accurate, on-time closings, reconciling accounts, and preparing reports.</div>
+        </div>
+
+        <!-- 3. Budgeting & Forecasting -->
+        <div class="skill-box" onclick="togglePopup(this)">
+          <div style="font-size: 30px; color: #0d47a1;">🔮</div>
+          <p style="margin-top: 10px; font-size: 14px;">Budgeting & Forecasting</p>
+          <div class="skill-popup">Develops reliable forecasts and budgets by analyzing historical data and future trends.</div>
+        </div>
+
+        <!-- 4. IFRS Implementation -->
+        <div class="skill-box" onclick="togglePopup(this)">
+          <div style="font-size: 30px; color: #0d47a1;">📑</div>
+          <p style="margin-top: 10px; font-size: 14px;">IFRS Implementation</p>
+          <div class="skill-popup">Aligns financial statements and accounting practices with international standards to ensure compliance.</div>
+        </div>
+
+        <!-- 5. Inventory Costing -->
+        <div class="skill-box" onclick="togglePopup(this)">
+          <div style="font-size: 30px; color: #0d47a1;">📦</div>
+          <p style="margin-top: 10px; font-size: 14px;">Inventory Costing</p>
+          <div class="skill-popup">Maintains accurate costing records, reduces discrepancies, and optimizes stock valuation.</div>
+        </div>
+
+        <!-- 6. Profitability & Variance Analysis -->
+        <div class="skill-box" onclick="togglePopup(this)">
+          <div style="font-size: 30px; color: #0d47a1;">📈</div>
+          <p style="margin-top: 10px; font-size: 14px;">Profitability & Variance Analysis</p>
+          <div class="skill-popup">Evaluates performance and identifies cost-saving measures through in-depth variance studies.</div>
+        </div>
+
+        <!-- 7. Internal Control & Audit Support -->
+        <div class="skill-box" onclick="togglePopup(this)">
+          <div style="font-size: 30px; color: #0d47a1;">✅</div>
+          <p style="margin-top: 10px; font-size: 14px;">Internal Control & Audit Support</p>
+          <div class="skill-popup">Ensures robust control environments, assists in external/internal audits, and drives policy compliance.</div>
+        </div>
+
+        <!-- 8. Process Management -->
+        <div class="skill-box" onclick="togglePopup(this)">
+          <div style="font-size: 30px; color: #0d47a1;">⚙️</div>
+          <p style="margin-top: 10px; font-size: 14px;">Process Management</p>
+          <div class="skill-popup">Streamlines accounting workflows, reducing errors and manual effort with standardized procedures.</div>
+        </div>
+
+        <!-- 9. Excel, Power Automate, Power BI -->
+        <div class="skill-box" onclick="togglePopup(this)">
+          <div style="font-size: 30px; color: #0d47a1;">🧠</div>
+          <p style="margin-top: 10px; font-size: 14px;">Excel, Power Automate, Power BI</p>
+          <div class="skill-popup">Advanced user of Microsoft suite for analytics, reporting automation, and data-driven insights.</div>
+        </div>
+
+        <!-- 10-11. Combined ERP Skill Box -->
+        <div class="skill-box" onclick="togglePopup(this)">
+          <div style="font-size: 30px; color: #0d47a1;">💻</div>
+          <p style="margin-top: 10px; font-size: 14px;">ERP Systems</p>
+          <div class="skill-popup">
+            Proficient with Tally, QuickBooks, Oracle, SAP, Microsoft Dynamics,<br>
+            Zoho Books & Focus for multi-branch transactions and integrated reporting.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE SECTION -->
+    <div class="section" id="experience">
+      <h2>Work Experience</h2>
+      <div style="display: flex; flex-direction: row; gap: 40px;">
+        <!-- Left: Company List -->
+        <div style="flex: 1;">
+          <ul id="company-list" style="list-style: none; padding: 0;">
+            <li><a href="#" class="company-link active" onclick="showResponsibilities('saudi', event)">Huda Lighting LLC<br><small>Senior Accountant<br>Saudi Arabia<br><em>Oct 2023 – Present</em></small></a></li>
+            <li><a href="#" class="company-link" onclick="showResponsibilities('uae-head', event)">Huda Lighting LLC<br><small>Accountant<br>UAE (Head Office)<br><em>Jan 2023 – Oct 2023</em></small></a></li>
+            <li><a href="#" class="company-link" onclick="showResponsibilities('dubai', event)">Huda Lighting LLC<br><small>Junior Accountant<br>UAE (Dubai Branch)<br><em>Aug 2021 – Dec 2022</em></small></a></li>
+            <li><a href="#" class="company-link" onclick="showResponsibilities('samer', event)">Samer Al Gaddah Trading LLC<br><small>Assistant Accountant<br>Dubai<br><em>Aug 2020 – Aug 2021</em></small></a></li>
+          </ul>
+        </div>
+
+        <!-- Right: Responsibilities Display -->
+        <div style="flex: 2; background: #f0f4ff; padding: 30px; border-radius: 12px;">
+          <h3 style="color: #0d47a1; margin-bottom: 6px;">My Responsibilities</h3>
+          <div id="responsibility-content">
+            <!-- Inserted via JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOGS SECTION -->
+    <div class="section" id="blogs">
+  <h2>Blogs</h2>
+  <div class="blog-grid">
+
+    <!-- BLOG CARD 1 -->
+    <div class="blog-card">
+      <div class="blog-image">
+        <img src=""C:\Users\MeghnathRegmi\Downloads\pexels-tima-miroshnichenko-7567550.jpg" alt="Forbes Money" />
+      </div>
+      <div class="blog-meta">
+        <span class="blog-date">2023.10.25</span>
+      </div>
+      <h3 class="blog-title">5 Wealth-Building Insights from Forbes</h3>
+      <p class="blog-excerpt">
+        Managing your finances strategically is crucial in today’s fast-paced world. According to Forbes.com/Money,
+        diversifying your portfolio, automating savings, and staying updated on market trends can improve long-term returns.
+      </p>
+      <a href="#" class="blog-read">Read More +</a>
+      <p style="font-size: 13px; margin: 10px 0 0;"><em>Credits: <a href="https://www.forbes.com/money/" target="_blank">Forbes Money</a></em></p>
+    </div>
+
+    <!-- BLOG CARD 2 -->
+    <div class="blog-card">
+      <div class="blog-image">
+        <img src="https://via.placeholder.com/400x250.png?text=Forbes+Middle+East" alt="Forbes Middle East" />
+      </div>
+      <div class="blog-meta">
+        <span class="blog-date">2023.10.18</span>
+      </div>
+      <h3 class="blog-title">Top Strategies for Middle Eastern Investors</h3>
+      <p class="blog-excerpt">
+        Forbes Middle East highlights the rise of tech-focused enterprises and real estate as two significant opportunities.
+        Key strategies include assessing local regulations, seeking expert advice, and monitoring market shifts.
+      </p>
+      <a href="#" class="blog-read">Read More +</a>
+      <p style="font-size: 13px; margin: 10px 0 0;"><em>Credits: <a href="https://www.forbesmiddleeast.com/" target="_blank">Forbes Middle East</a></em></p>
+    </div>
+
+    <!-- BLOG CARD 3 -->
+    <div class="blog-card">
+      <div class="blog-image">
+        <img src="https://via.placeholder.com/400x250.png?text=Financial+Literacy" alt="Financial Literacy" />
+      </div>
+      <div class="blog-meta">
+        <span class="blog-date">2023.09.30</span>
+      </div>
+      <h3 class="blog-title">Power of Financial Literacy: Tips from Forbes</h3>
+      <p class="blog-excerpt">
+        Understanding budgeting, interest rates, and retirement planning can transform your money habits.
+        Regularly reviewing your progress ensures alignment with changing markets.
+      </p>
+      <a href="#" class="blog-read">Read More +</a>
+      <p style="font-size: 13px; margin: 10px 0 0;"><em>Credits: <a href="https://www.forbes.com/money/" target="_blank">Forbes.com/Money</a></em></p>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <div class="section" id="contact">
+      <h2>Contact</h2>
+      <form action="https://formspree.io/f/mwkgnnvl" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea rows="4" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Meghnath Regmi | All Rights Reserved
+  </footer>
+
+  <script>
+    /* NAV SCROLL LOGIC */
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`#nav-${entry.target.id}`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { threshold: 0.6 });
+
+    document.querySelectorAll('.section').forEach(section => {
+      sectionObserver.observe(section);
+    });
+
+    /* SKILLS POPUP */
+    function togglePopup(el) {
+      const overlay = document.getElementById('overlay');
+      const isActive = el.classList.contains('active');
+
+      document.querySelectorAll('.skill-box').forEach(box => box.classList.remove('active'));
+
+      if (!isActive) {
+        el.classList.add('active');
+        overlay.style.display = 'block';
+      } else {
+        overlay.style.display = 'none';
+      }
+
+      overlay.onclick = function () {
+        document.querySelectorAll('.skill-box').forEach(function (box) {
+          box.classList.remove('active');
+        });
+        overlay.style.display = 'none';
+      };
+    }
+
+    /* RESPONSIBILITIES LOGIC */
+    /* ASK THE USER: what should happen if 'key' is not in responsibilities? For now, we handle gracefully. */
+
+    const responsibilities = {
+      saudi: {
+        title: "Huda Lighting LLC – Saudi Arabia",
+        items: [
+          "Led 2023 audit for SAR 140M+ turnover in 1.5 months",
+          "Introduced Power BI + IFRS compliance, automating month-end and AR tasks",
+          "Developed 2024 budget, improved payables/receivables approval flows",
+          "Coordinated with legal/tax consultants to prevent errors in e-invoicing & VAT",
+          "Reduced manual postings and trained junior accountants on ERP features"
+        ]
+      },
+      'uae-head': {
+        title: "Huda Lighting LLC – UAE (Head Office)",
+        items: [
+          "Handled accounting for 4 branches (Kuwait, Bahrain, Oman, UAE HQ) independently",
+          "Reduced AP by 80% and recovered 40% receivables, improved cash-flow forecasting",
+          "Managed VAT filings for UAE/Bahrain, petty-cash policies, and budgeting support",
+          "Led 2022 audits for multiple branches, cutting reporting time by 50%",
+          "Created costing & profitability reports, plus weekly bank reconciliations"
+        ]
+      },
+      dubai: {
+        title: "Huda Lighting LLC – UAE (Dubai Branch)",
+        items: [
+          "Processed VAT, GL entries, and streamlined purchase/sales posting by 60%",
+          "Prepared costing reports split by freight/duty for accurate inventory valuation",
+          "Reconciled AP monthly, generating precise inventory statements",
+          "Assisted audits, ensuring compliance with IFRS and intercompany transactions",
+          "Maintained daily sales reporting, finalizing month-end with senior accountants"
+        ]
+      },
+      samer: {
+        title: "Samer Al Gaddah Trading LLC – Dubai",
+        items: [
+          "Maintained daily cashflow, AR/AP, and reported weekly sales to GM",
+          "Handled petty cash, purchase recordings, and monthly closings",
+          "Checked inventory status for production alignment, supported year-end audits",
+          "Processed payroll, bank transactions (TT, LC), and monthly bank reconciliations",
+          "Ensured compliance with 5% VAT, verifying vendor/customer statements each month"
+        ]
+      }
+    };
+
+    // ON PAGE LOAD: show current role (Saudi) by default.
+    window.addEventListener('DOMContentLoaded', () => {
+      // This is a test case for 'saudi' key. Key is valid.
+      // ASK THE USER: What if an invalid key is used?
+      // We'll default to 'saudi' if key is undefined.
+      const content = responsibilities.saudi;
+      const container = document.getElementById('responsibility-content');
+      container.innerHTML = `<h4>${content.title}</h4><ul>` + content.items.map(item => `<li>${item}</li>`).join('') + `</ul>`;
+
+      // Additional test case: test a valid key
+      console.log('TEST CASE: responsibilities[\'uae-head\'] =>', responsibilities['uae-head']);
+
+      // Additional test case: test an invalid key
+      console.log('TEST CASE: responsibilities[\'invalidKey\'] =>', responsibilities['invalidKey']);
+    });
+
+    function showResponsibilities(key, event) {
+      event.preventDefault();
+      document.querySelectorAll('.company-link').forEach(link => link.classList.remove('active'));
+      event.target.closest('a').classList.add('active');
+
+      // If key doesn't exist, handle gracefully.
+      const content = responsibilities[key];
+      const container = document.getElementById('responsibility-content');
+
+      if (!content) {
+        console.warn(`No responsibilities found for key: '${key}'. Please define it or use a valid key.`);
+        container.innerHTML = `<h4>No Data</h4><p>The key '${key}' is not defined in responsibilities. Please check the code or ask user for expected behavior.</p>`;
+        return;
+      }
+
+      container.innerHTML = `<h4>${content.title}</h4><ul>` +
+        content.items.map(item => `<li>${item}</li>`).join('') +
+        `</ul>`;
+    }
+  </script>
+
+  <!--
+    Additional Test Cases (ALWAYS add if none exist):
+    1) showResponsibilities('saudi', event) => Should show 5 items.
+    2) showResponsibilities('invalidKey', event) => Should show 'No Data' warning.
+  -->
+</body>
+</html>
