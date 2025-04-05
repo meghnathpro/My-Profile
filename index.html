@@ -1,11 +1,11 @@
-<!-- Rewritten Code with Debug Fix -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meghnath Regmi - Chartered Accountant</title>
+  <title>Meghnath Regmi - Senior Accountant | IFRS Specialist</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     /* Global Styles */
@@ -47,18 +47,19 @@
     /* Header Styles */
     header {
       background: #ffffff;
-      padding: 20px 30px;
+      padding: 60px 30px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 40px;
       flex-wrap: wrap;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      text-align: center;
     }
     header img {
       border-radius: 50%;
-      width: 140px;
-      height: 140px;
+      width: 160px;
+      height: 160px;
       object-fit: cover;
       border: 3px solid #0d47a1;
     }
@@ -94,471 +95,390 @@
       margin-top: 20px;
     }
 
-    /* Blog Redesign */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.blog-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.blog-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-}
-
-.blog-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.blog-meta {
-  font-size: 14px;
-  color: #777;
-  margin: 10px 20px 0 20px;
-}
-
-.blog-date {
-  font-size: 12px;
-  color: #888;
-}
-
-.blog-title {
-  margin: 10px 20px 5px;
-  font-size: 18px;
-  color: #0d47a1;
-}
-
-.blog-excerpt {
-  margin: 0 20px 20px;
-  font-size: 15px;
-  line-height: 1.4;
-  color: #444;
-}
-
-.blog-read {
-  margin: 0 20px;
-  align-self: flex-start;
-  text-decoration: none;
-  font-weight: bold;
-  color: #0d47a1;
-  font-size: 14px;
-  position: relative;
-  padding-bottom: 2px;
-}
-
-.blog-read:hover {
-  text-decoration: underline;
-}
-
-    .blog-post {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-    }
-    .blog-post:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    }
-    .blog-post h3 {
-      margin-top: 0;
-      color: #0d47a1;
-    }
-    .blog-post p {
-      color: #444;
-    }
-
-    /* Form */
-    form {
-      background: #fff;
+    /* Profile Summary Section */
+    .profile-summary {
+      background: #ffffff;
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+    .profile-summary p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* Skills Section */
+    .skills-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-content: center;
+    }
+    .skill-box {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .skill-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .skill-icon {
+      font-size: 36px;
+      color: #0d47a1;
+      margin-bottom: 15px;
+    }
+    .skill-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #0d47a1;
+    }
+
+    /* Experience Section */
+    .experience-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .experience-item {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+    .company-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0d47a1;
+    }
+    .position-title {
+      font-weight: 600;
+      color: #555;
+    }
+    .experience-period {
+      color: #777;
+      font-style: italic;
+    }
+    .experience-details ul {
+      list-style-type: none;
+    }
+    .experience-details li {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .experience-details li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: #0d47a1;
+    }
+
+    /* Education Section */
+    .education-item {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+    .education-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0d47a1;
+      margin-bottom: 5px;
+    }
+    .education-meta {
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .contact-info {
       display: flex;
       flex-direction: column;
       gap: 15px;
     }
-    form input, form textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-    form button {
-      background: #0d47a1;
-      color: #fff;
-      font-weight: bold;
-      padding: 12px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      color: #777;
-    }
-
-    /* Skills Popup Styles */
-    .dim-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.1);
-      z-index: 5;
-      display: none;
-    }
-    .skill-box {
-      position: relative;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      background: #ffffff;
-      padding: 14px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      text-align: center;
-      max-width: 100%;
-    }
-    .skill-box:hover {
-      background: #e3f2fd !important;
-    }
-    .skill-popup {
-      display: none;
-      position: absolute;
-      top: 110%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #ffffff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-      z-index: 10;
-      width: 250px;
-      font-size: 14px;
-      color: #333;
-    }
-    .skill-box.active .skill-popup {
-      display: block;
-    }
-    .skill-box.active {
-      z-index: 20;
-      position: relative;
-    }
-
-    .skills-wrapper {
-      /* Force exactly 4 columns on wider screens */
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      justify-content: center;
-    }
-
-    /* Experience Interactive Section */
-    .company-link {
-      display: block;
-      padding: 12px 15px;
-      border-radius: 6px;
-      margin-bottom: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #0d47a1;
-      background: #ffffff;
-      transition: background 0.3s;
-    }
-    .company-link:hover {
-      background: #e3f2fd;
-    }
-    .company-link.active {
-      background: #0d47a1;
-      color: #fff;
-    }
-
-    /* Responsibilities styling (final desired style) */
-    #responsibility-content {
-      font-size: 14px;
-      line-height: 1.8;
-      color: #444;
-      display: grid;
+    .contact-item {
+      display: flex;
+      align-items: center;
       gap: 10px;
     }
-    #responsibility-content h4 {
+    .contact-icon {
       color: #0d47a1;
-      margin: 4px 0 4px 0;
       font-size: 20px;
-      font-weight: 600;
+      width: 30px;
+      text-align: center;
     }
-    #responsibility-content ul {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      counter-reset: item;
-    }
-    #responsibility-content ul li {
-      display: flex;
-      align-items: center;
-      padding: 16px 20px;
-      margin-bottom: 15px;
-      border-radius: 12px;
-      background: linear-gradient(to right, #ffffff, #e3f2fd);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      border-left: 8px solid #0d47a1;
-      font-size: 15.5px;
-      font-weight: 500;
-      line-height: 1.6;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-    #responsibility-content ul li::before {
-      counter-increment: item;
-      content: counter(item);
-      background: #0d47a1;
-      color: #fff;
-      border-radius: 50%;
-      width: 34px;
-      height: 34px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      font-weight: bold;
-      margin-right: 16px;
-      flex-shrink: 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        padding: 40px 20px;
+      }
+      .intro h1 {
+        font-size: 28px;
+      }
+      .section h2 {
+        font-size: 24px;
+      }
+      .experience-header {
+        flex-direction: column;
+        gap: 5px;
+      }
     }
   </style>
 </head>
 <body>
-  <div id="overlay" class="dim-overlay"></div>
-
   <!-- NAVBAR -->
   <nav>
     <div>
-      <a href="#home" class="nav-link" id="nav-home">Home</a>
-      <a href="#blogs" class="nav-link" id="nav-blogs">Blogs</a>
+      <a href="#home" class="nav-link active" id="nav-home">Home</a>
+      <a href="#experience" class="nav-link" id="nav-experience">Experience</a>
+      <a href="#education" class="nav-link" id="nav-education">Education</a>
       <a href="#contact" class="nav-link" id="nav-contact">Contact</a>
     </div>
   </nav>
 
   <!-- HEADER -->
-  <header>
-    <div class="intro" style="text-align: center; max-width: 900px;">
-      <h1 style="font-size: 48px; color: #0d47a1; margin-bottom: 10px;">Meghnath Regmi</h1>
-      <p class="subheading" style="font-size: 22px; color: #555;">Senior Accountant | IFRS Specialist | Analyst</p>
-      <p style="margin-top: 20px; font-size: 18px; color: #666;">A passionate finance professional with expertise in reporting, compliance, and automation, based in Riyadh, KSA.</p>
+  <header id="home">
+    <div class="intro">
+      <h1>MEGHNATH REGMI</h1>
+      <p class="subheading">SENIOR ACCOUNTANT | IFRS SPECIALIST</p>
+      <p style="max-width: 700px; margin: 20px auto 0; font-size: 18px; line-height: 1.6;">
+        Proven track record in revitalizing company finances ensuring implication of IFRS policies & guidelines.
+      </p>
     </div>
   </header>
 
   <!-- MAIN CONTAINER -->
   <div class="container">
 
-    <!-- HOME SECTION -->
-    <div class="section" id="home">
-      <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between;">
-        <div style="flex: 1; min-width: 280px;">
-          <h1 style="font-size: 36px; color: #0d47a1; margin-bottom: 10px;">Meet Meghnath Regmi</h1>
-          <p style="font-size: 14px; color: #777; margin-bottom: 20px;">Journey of a Finance Professional</p>
-          <p style="font-size: 18px; line-height: 1.6; color: #333;">With a passion for financial systems, compliance, and analytics, I’ve spent the past 4+ years transforming numbers into insight across the GCC. I specialize in IFRS implementation, Power BI automation, and audit-readiness — helping organizations improve accuracy and performance.</p>
-        </div>
-        <div style="flex: 1; min-width: 280px; text-align: center;">
-          <img src="https://images.unsplash.com/photo-1591696331111-4c72c92c5b01?crop=entropy&cs=tinysrgb&fit=crop&h=280&w=280" alt="Meghnath Regmi" style="border-radius: 12px; width: 100%; max-width: 300px; object-fit: cover;">
-        </div>
+    <!-- PROFILE SUMMARY -->
+    <div class="section">
+      <div class="profile-summary">
+        <h2>Professional Profile</h2>
+        <p>Senior Accountant with 4 years of hands-on experience in managing the accounts and finance departments of multinational companies across five Middle Eastern countries. Proven track record in restoring the financial health of companies by controlling receivables, payables, and assets, negotiating favorable terms with vendors and clients, and strengthening procedures to ensure compliance with regulatory laws. Expertly applied accurate IFRS in preparing financial statements, ensuring transparency and reliability. Demonstrated adaptability and expertise across various industries, effectively managing financial operations in diverse regulatory environments and economic conditions. Led and mentored junior accountants, fostering a collaborative and high-performing team.</p>
       </div>
+    </div>
 
-      <h2 style="margin-top: 60px; font-size: 26px; color: #0d47a1;">My Skills to Support You</h2>
+    <!-- SKILLS SECTION -->
+    <div class="section">
+      <h2>Core Competencies</h2>
       <div class="skills-wrapper">
-        <!-- 1. Financial Planning & Analysis -->
-        <div class="skill-box" onclick="togglePopup(this)">
-          <div style="font-size: 30px; color: #0d47a1;">💰</div>
-          <p style="margin-top: 10px; font-size: 14px;">Financial Planning & Analysis</p>
-          <div class="skill-popup">Expert in budgeting, forecasting, and analyzing financial statements to guide strategic decisions.</div>
+        <div class="skill-box">
+          <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+          <h3 class="skill-title">Financial Planning & Analysis</h3>
+          <p>Budgeting, forecasting, and analyzing financial statements</p>
         </div>
-
-        <!-- 2. Month & Year-End Closings -->
-        <div class="skill-box" onclick="togglePopup(this)">
-          <div style="font-size: 30px; color: #0d47a1;">📆</div>
-          <p style="margin-top: 10px; font-size: 14px;">Month & Year-End Closings</p>
-          <div class="skill-popup">Proficient in ensuring accurate, on-time closings, reconciling accounts, and preparing reports.</div>
+        <div class="skill-box">
+          <div class="skill-icon"><i class="fas fa-calendar-check"></i></div>
+          <h3 class="skill-title">Month & Year-End Closings</h3>
+          <p>Accurate, on-time closings and account reconciliation</p>
         </div>
-
-        <!-- 3. Budgeting & Forecasting -->
-        <div class="skill-box" onclick="togglePopup(this)">
-          <div style="font-size: 30px; color: #0d47a1;">🔮</div>
-          <p style="margin-top: 10px; font-size: 14px;">Budgeting & Forecasting</p>
-          <div class="skill-popup">Develops reliable forecasts and budgets by analyzing historical data and future trends.</div>
+        <div class="skill-box">
+          <div class="skill-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3 class="skill-title">IFRS Implementation</h3>
+          <p>Financial statements preparation with IFRS compliance</p>
         </div>
-
-        <!-- 4. IFRS Implementation -->
-        <div class="skill-box" onclick="togglePopup(this)">
-          <div style="font-size: 30px; color: #0d47a1;">📑</div>
-          <p style="margin-top: 10px; font-size: 14px;">IFRS Implementation</p>
-          <div class="skill-popup">Aligns financial statements and accounting practices with international standards to ensure compliance.</div>
+        <div class="skill-box">
+          <div class="skill-icon"><i class="fas fa-search-dollar"></i></div>
+          <h3 class="skill-title">Audit Support</h3>
+          <p>Internal controls and audit preparation</p>
         </div>
-
-        <!-- 5. Inventory Costing -->
-        <div class="skill-box" onclick="togglePopup(this)">
-          <div style="font-size: 30px; color: #0d47a1;">📦</div>
-          <p style="margin-top: 10px; font-size: 14px;">Inventory Costing</p>
-          <div class="skill-popup">Maintains accurate costing records, reduces discrepancies, and optimizes stock valuation.</div>
+        <div class="skill-box">
+          <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+          <h3 class="skill-title">Process Automation</h3>
+          <p>Power BI, Power Automate, and ERP optimization</p>
         </div>
-
-        <!-- 6. Profitability & Variance Analysis -->
-        <div class="skill-box" onclick="togglePopup(this)">
-          <div style="font-size: 30px; color: #0d47a1;">📈</div>
-          <p style="margin-top: 10px; font-size: 14px;">Profitability & Variance Analysis</p>
-          <div class="skill-popup">Evaluates performance and identifies cost-saving measures through in-depth variance studies.</div>
-        </div>
-
-        <!-- 7. Internal Control & Audit Support -->
-        <div class="skill-box" onclick="togglePopup(this)">
-          <div style="font-size: 30px; color: #0d47a1;">✅</div>
-          <p style="margin-top: 10px; font-size: 14px;">Internal Control & Audit Support</p>
-          <div class="skill-popup">Ensures robust control environments, assists in external/internal audits, and drives policy compliance.</div>
-        </div>
-
-        <!-- 8. Process Management -->
-        <div class="skill-box" onclick="togglePopup(this)">
-          <div style="font-size: 30px; color: #0d47a1;">⚙️</div>
-          <p style="margin-top: 10px; font-size: 14px;">Process Management</p>
-          <div class="skill-popup">Streamlines accounting workflows, reducing errors and manual effort with standardized procedures.</div>
-        </div>
-
-        <!-- 9. Excel, Power Automate, Power BI -->
-        <div class="skill-box" onclick="togglePopup(this)">
-          <div style="font-size: 30px; color: #0d47a1;">🧠</div>
-          <p style="margin-top: 10px; font-size: 14px;">Excel, Power Automate, Power BI</p>
-          <div class="skill-popup">Advanced user of Microsoft suite for analytics, reporting automation, and data-driven insights.</div>
-        </div>
-
-        <!-- 10-11. Combined ERP Skill Box -->
-        <div class="skill-box" onclick="togglePopup(this)">
-          <div style="font-size: 30px; color: #0d47a1;">💻</div>
-          <p style="margin-top: 10px; font-size: 14px;">ERP Systems</p>
-          <div class="skill-popup">
-            Proficient with Tally, QuickBooks, Oracle, SAP, Microsoft Dynamics,<br>
-            Zoho Books & Focus for multi-branch transactions and integrated reporting.
-          </div>
+        <div class="skill-box">
+          <div class="skill-icon"><i class="fas fa-percentage"></i></div>
+          <h3 class="skill-title">VAT Management</h3>
+          <p>Monthly VAT returns and compliance</p>
         </div>
       </div>
     </div>
 
     <!-- EXPERIENCE SECTION -->
     <div class="section" id="experience">
-      <h2>Work Experience</h2>
-      <div style="display: flex; flex-direction: row; gap: 40px;">
-        <!-- Left: Company List -->
-        <div style="flex: 1;">
-          <ul id="company-list" style="list-style: none; padding: 0;">
-            <li><a href="#" class="company-link active" onclick="showResponsibilities('saudi', event)">Huda Lighting LLC<br><small>Senior Accountant<br>Saudi Arabia<br><em>Oct 2023 – Present</em></small></a></li>
-            <li><a href="#" class="company-link" onclick="showResponsibilities('uae-head', event)">Huda Lighting LLC<br><small>Accountant<br>UAE (Head Office)<br><em>Jan 2023 – Oct 2023</em></small></a></li>
-            <li><a href="#" class="company-link" onclick="showResponsibilities('dubai', event)">Huda Lighting LLC<br><small>Junior Accountant<br>UAE (Dubai Branch)<br><em>Aug 2021 – Dec 2022</em></small></a></li>
-            <li><a href="#" class="company-link" onclick="showResponsibilities('samer', event)">Samer Al Gaddah Trading LLC<br><small>Assistant Accountant<br>Dubai<br><em>Aug 2020 – Aug 2021</em></small></a></li>
-          </ul>
+      <h2>Professional Experience</h2>
+      <div class="experience-container">
+        
+        <!-- Huda Lighting - Saudi -->
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h3 class="company-name">Huda Lighting LLC</h3>
+              <p class="position-title">Senior Accountant - Riyadh Branch, Saudi Arabia</p>
+            </div>
+            <p class="experience-period">Oct 2023 - Present</p>
+          </div>
+          <div class="experience-details">
+            <ul>
+              <li>Promoted and transferred to the Saudi branch to manage the increased project flow</li>
+              <li>Trained junior accountants in accurate transaction recording through proper guidance</li>
+              <li>Reduced errors by conducting weekly reviews of general ledger entries</li>
+              <li>Prepared and submitted financial reports to management with 100% accuracy for cash-based transactions</li>
+              <li>Developed the budget for 2024 by analyzing 2023 transaction trends</li>
+              <li>Established approval workflows for sales and purchase orders to control inventory movement</li>
+              <li>Led the audit for 2023, completing it within one and a half months for a turnover of more than 140 million</li>
+              <li>Introduced Power BI for generating financial statements and various reports with extensive data</li>
+            </ul>
+          </div>
         </div>
-
-        <!-- Right: Responsibilities Display -->
-        <div style="flex: 2; background: #f0f4ff; padding: 30px; border-radius: 12px;">
-          <h3 style="color: #0d47a1; margin-bottom: 6px;">My Responsibilities</h3>
-          <div id="responsibility-content">
-            <!-- Inserted via JavaScript -->
+        
+        <!-- Huda Lighting - UAE Head Office -->
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h3 class="company-name">Huda Lighting LLC</h3>
+              <p class="position-title">Accountant - Head Office, UAE</p>
+            </div>
+            <p class="experience-period">Jan 2023 - Oct 2023</p>
+          </div>
+          <div class="experience-details">
+            <ul>
+              <li>Assigned complete accounting responsibilities for Kuwait Branch, Bahrain Branch, Oman Branch, and Head Office</li>
+              <li>Efficiently controlled accounts payable by 80% and recovered receivables by 40%</li>
+              <li>Managed VAT filing for UAE and Bahrain</li>
+              <li>Independently handled the audit for the year 2022 for all specified branches</li>
+              <li>Developed and implemented a comprehensive procedure for petty cash flow management</li>
+              <li>Prepared and submitted forecasted cash flow reports with 80% prediction accuracy</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Huda Lighting - Dubai -->
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h3 class="company-name">Huda Lighting LLC</h3>
+              <p class="position-title">Junior Accountant - Dubai Branch, UAE</p>
+            </div>
+            <p class="experience-period">Aug 2021 - Dec 2022</p>
+          </div>
+          <div class="experience-details">
+            <ul>
+              <li>Posted all general ledger entries, optimizing process efficiency to reduce transaction posting time by 60%</li>
+              <li>Compiled and submitted VAT data to the senior accountant for accurate and timely VAT submission</li>
+              <li>Recorded and managed petty cash transactions, improving replenishment time</li>
+              <li>Prepared and submitted detailed costing reports to the costing manager</li>
+              <li>Generated and submitted inventory reports to the senior accountant for precise inventory reconciliation</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Samer Al Gaddah -->
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h3 class="company-name">Samer Al Gaddah Trading LLC</h3>
+              <p class="position-title">Assistant Accountant - Dubai, UAE</p>
+            </div>
+            <p class="experience-period">Aug 2020 - Aug 2021</p>
+          </div>
+          <div class="experience-details">
+            <ul>
+              <li>Maintained daily books for cash inflows and outflows</li>
+              <li>Reported weekly sales to the General Manager</li>
+              <li>Managed and recorded petty cash flow with zero errors</li>
+              <li>Supported the Senior Accountant in timely completion of regular purchase recordings</li>
+              <li>Checked and shared inventory reports with the company owner</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- BLOGS SECTION -->
-    <div class="section" id="blogs">
-  <h2>Blogs</h2>
-  <div class="blog-grid">
-
-    <!-- BLOG CARD 1 -->
-    <div class="blog-card">
-      <div class="blog-image">
-        <img src=""C:\Users\MeghnathRegmi\Downloads\pexels-tima-miroshnichenko-7567550.jpg" alt="Forbes Money" />
+    <!-- EDUCATION SECTION -->
+    <div class="section" id="education">
+      <h2>Education & Certifications</h2>
+      
+      <div class="education-item">
+        <h3 class="education-title">Bachelor of Business Administration (Finance)</h3>
+        <p class="education-meta">Boston International College, Nepal | Dean's List (CGPA: 3.86/4.00)</p>
       </div>
-      <div class="blog-meta">
-        <span class="blog-date">2023.10.25</span>
+      
+      <div class="education-item">
+        <h3 class="education-title">Diploma in International Financial Reporting (DipIFR)</h3>
+        <p class="education-meta">ACCA Global (UK) | In Progress (2024)</p>
       </div>
-      <h3 class="blog-title">5 Wealth-Building Insights from Forbes</h3>
-      <p class="blog-excerpt">
-        Managing your finances strategically is crucial in today’s fast-paced world. According to Forbes.com/Money,
-        diversifying your portfolio, automating savings, and staying updated on market trends can improve long-term returns.
-      </p>
-      <a href="#" class="blog-read">Read More +</a>
-      <p style="font-size: 13px; margin: 10px 0 0;"><em>Credits: <a href="https://www.forbes.com/money/" target="_blank">Forbes Money</a></em></p>
     </div>
 
-    <!-- BLOG CARD 2 -->
-    <div class="blog-card">
-      <div class="blog-image">
-        <img src="https://via.placeholder.com/400x250.png?text=Forbes+Middle+East" alt="Forbes Middle East" />
+    <!-- TECHNICAL SKILLS -->
+    <div class="section">
+      <h2>Technical Proficiencies</h2>
+      <div class="skills-wrapper">
+        <div class="skill-box">
+          <div class="skill-icon"><i class="fas fa-file-excel"></i></div>
+          <h3 class="skill-title">Microsoft Excel</h3>
+          <p>Advanced functions, macros, and financial modeling</p>
+        </div>
+        <div class="skill-box">
+          <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
+          <h3 class="skill-title">Power BI</h3>
+          <p>Financial reporting and data visualization</p>
+        </div>
+        <div class="skill-box">
+          <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+          <h3 class="skill-title">Power Automate</h3>
+          <p>Workflow automation and process optimization</p>
+        </div>
+        <div class="skill-box">
+          <div class="skill-icon"><i class="fas fa-database"></i></div>
+          <h3 class="skill-title">ERP Systems</h3>
+          <p>Tally, Business Central, Zoho Books, QuickBooks, Oracle, SAP, Focus</p>
+        </div>
       </div>
-      <div class="blog-meta">
-        <span class="blog-date">2023.10.18</span>
-      </div>
-      <h3 class="blog-title">Top Strategies for Middle Eastern Investors</h3>
-      <p class="blog-excerpt">
-        Forbes Middle East highlights the rise of tech-focused enterprises and real estate as two significant opportunities.
-        Key strategies include assessing local regulations, seeking expert advice, and monitoring market shifts.
-      </p>
-      <a href="#" class="blog-read">Read More +</a>
-      <p style="font-size: 13px; margin: 10px 0 0;"><em>Credits: <a href="https://www.forbesmiddleeast.com/" target="_blank">Forbes Middle East</a></em></p>
-    </div>
-
-    <!-- BLOG CARD 3 -->
-    <div class="blog-card">
-      <div class="blog-image">
-        <img src="https://via.placeholder.com/400x250.png?text=Financial+Literacy" alt="Financial Literacy" />
-      </div>
-      <div class="blog-meta">
-        <span class="blog-date">2023.09.30</span>
-      </div>
-      <h3 class="blog-title">Power of Financial Literacy: Tips from Forbes</h3>
-      <p class="blog-excerpt">
-        Understanding budgeting, interest rates, and retirement planning can transform your money habits.
-        Regularly reviewing your progress ensures alignment with changing markets.
-      </p>
-      <a href="#" class="blog-read">Read More +</a>
-      <p style="font-size: 13px; margin: 10px 0 0;"><em>Credits: <a href="https://www.forbes.com/money/" target="_blank">Forbes.com/Money</a></em></p>
-    </div>
-
-  </div>
-</div>
-</div>
-</div>
-</div>
     </div>
 
     <!-- CONTACT SECTION -->
     <div class="section" id="contact">
-      <h2>Contact</h2>
-      <form action="https://formspree.io/f/mwkgnnvl" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea rows="4" name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+      <h2>Contact Information</h2>
+      <div class="contact-section">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <span>Al Nafal, Riyadh, Saudi Arabia</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <span>+966 535324931</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <span>Meghnathpro@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+            <span>linkedin.com/in/meghnath-reqmi-5856a9206</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <footer>
-    &copy; 2025 Meghnath Regmi | All Rights Reserved
+    <p>&copy; 2024 Meghnath Regmi | All Rights Reserved</p>
+    <p style="margin-top: 10px; font-style: italic;">I affirm that all the information furnished herein is factual and accurate to the best of my knowledge.</p>
   </footer>
 
   <script>
@@ -578,115 +498,15 @@
       sectionObserver.observe(section);
     });
 
-    /* SKILLS POPUP */
-    function togglePopup(el) {
-      const overlay = document.getElementById('overlay');
-      const isActive = el.classList.contains('active');
-
-      document.querySelectorAll('.skill-box').forEach(box => box.classList.remove('active'));
-
-      if (!isActive) {
-        el.classList.add('active');
-        overlay.style.display = 'block';
-      } else {
-        overlay.style.display = 'none';
-      }
-
-      overlay.onclick = function () {
-        document.querySelectorAll('.skill-box').forEach(function (box) {
-          box.classList.remove('active');
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
         });
-        overlay.style.display = 'none';
-      };
-    }
-
-    /* RESPONSIBILITIES LOGIC */
-    /* ASK THE USER: what should happen if 'key' is not in responsibilities? For now, we handle gracefully. */
-
-    const responsibilities = {
-      saudi: {
-        title: "Huda Lighting LLC – Saudi Arabia",
-        items: [
-          "Led 2023 audit for SAR 140M+ turnover in 1.5 months",
-          "Introduced Power BI + IFRS compliance, automating month-end and AR tasks",
-          "Developed 2024 budget, improved payables/receivables approval flows",
-          "Coordinated with legal/tax consultants to prevent errors in e-invoicing & VAT",
-          "Reduced manual postings and trained junior accountants on ERP features"
-        ]
-      },
-      'uae-head': {
-        title: "Huda Lighting LLC – UAE (Head Office)",
-        items: [
-          "Handled accounting for 4 branches (Kuwait, Bahrain, Oman, UAE HQ) independently",
-          "Reduced AP by 80% and recovered 40% receivables, improved cash-flow forecasting",
-          "Managed VAT filings for UAE/Bahrain, petty-cash policies, and budgeting support",
-          "Led 2022 audits for multiple branches, cutting reporting time by 50%",
-          "Created costing & profitability reports, plus weekly bank reconciliations"
-        ]
-      },
-      dubai: {
-        title: "Huda Lighting LLC – UAE (Dubai Branch)",
-        items: [
-          "Processed VAT, GL entries, and streamlined purchase/sales posting by 60%",
-          "Prepared costing reports split by freight/duty for accurate inventory valuation",
-          "Reconciled AP monthly, generating precise inventory statements",
-          "Assisted audits, ensuring compliance with IFRS and intercompany transactions",
-          "Maintained daily sales reporting, finalizing month-end with senior accountants"
-        ]
-      },
-      samer: {
-        title: "Samer Al Gaddah Trading LLC – Dubai",
-        items: [
-          "Maintained daily cashflow, AR/AP, and reported weekly sales to GM",
-          "Handled petty cash, purchase recordings, and monthly closings",
-          "Checked inventory status for production alignment, supported year-end audits",
-          "Processed payroll, bank transactions (TT, LC), and monthly bank reconciliations",
-          "Ensured compliance with 5% VAT, verifying vendor/customer statements each month"
-        ]
-      }
-    };
-
-    // ON PAGE LOAD: show current role (Saudi) by default.
-    window.addEventListener('DOMContentLoaded', () => {
-      // This is a test case for 'saudi' key. Key is valid.
-      // ASK THE USER: What if an invalid key is used?
-      // We'll default to 'saudi' if key is undefined.
-      const content = responsibilities.saudi;
-      const container = document.getElementById('responsibility-content');
-      container.innerHTML = `<h4>${content.title}</h4><ul>` + content.items.map(item => `<li>${item}</li>`).join('') + `</ul>`;
-
-      // Additional test case: test a valid key
-      console.log('TEST CASE: responsibilities[\'uae-head\'] =>', responsibilities['uae-head']);
-
-      // Additional test case: test an invalid key
-      console.log('TEST CASE: responsibilities[\'invalidKey\'] =>', responsibilities['invalidKey']);
+      });
     });
-
-    function showResponsibilities(key, event) {
-      event.preventDefault();
-      document.querySelectorAll('.company-link').forEach(link => link.classList.remove('active'));
-      event.target.closest('a').classList.add('active');
-
-      // If key doesn't exist, handle gracefully.
-      const content = responsibilities[key];
-      const container = document.getElementById('responsibility-content');
-
-      if (!content) {
-        console.warn(`No responsibilities found for key: '${key}'. Please define it or use a valid key.`);
-        container.innerHTML = `<h4>No Data</h4><p>The key '${key}' is not defined in responsibilities. Please check the code or ask user for expected behavior.</p>`;
-        return;
-      }
-
-      container.innerHTML = `<h4>${content.title}</h4><ul>` +
-        content.items.map(item => `<li>${item}</li>`).join('') +
-        `</ul>`;
-    }
   </script>
-
-  <!--
-    Additional Test Cases (ALWAYS add if none exist):
-    1) showResponsibilities('saudi', event) => Should show 5 items.
-    2) showResponsibilities('invalidKey', event) => Should show 'No Data' warning.
-  -->
 </body>
 </html>
